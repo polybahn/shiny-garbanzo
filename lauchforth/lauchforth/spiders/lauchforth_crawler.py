@@ -9,7 +9,7 @@ from lauchforth.items import LauchforthItem
 class LauchforthCrawlerSpider(CrawlSpider):
     name = 'lauchforth_crawler'
     allowed_domains = ['launchforth.io']
-    start_urls = ['http://www.launchforth.io/']
+    start_urls = ['https://launchforth.io/api/v2/']
 
     rules = (
         Rule(LinkExtractor(allow=r'Items/'), callback='parse_item', follow=True),
