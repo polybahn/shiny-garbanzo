@@ -11,10 +11,14 @@
 
 BOT_NAME = 'launchforth'
 
+LOG_LEVEL = 'INFO'
+
 SPIDER_MODULES = ['launchforth.spiders']
 NEWSPIDER_MODULE = 'launchforth.spiders'
 
-
+# Domain prefix
+PREFIX = 'https://launchforth.io/api/v2/'
+DOMAIN = 'launchforth.io'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'launchforth (+http://www.yourdomain.com)'
 
@@ -64,9 +68,13 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'launchforth.pipelines.SomePipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'launchforth.pipelines.MongoDBPipeline': 300,
+}
+MONGODB_SERVER = "localhost"
+MONGODB_PORT = 27017
+MONGODB_DB = "launchforth"
+
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
