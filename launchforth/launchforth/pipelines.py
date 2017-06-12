@@ -39,10 +39,10 @@ class MongoDBPipeline(object):
     def process_item(self, item, spider):
         try:
             self.db[self.mongo_collection].insert(item['content'])
-            log.msg(spider.name + "Items added to MongoDB database!",
-                    level=log.INFO, spider=spider)
+            # log.msg(spider.name + "Items added to MongoDB database!",
+            #         level=log.INFO, spider=spider)
         except pymongo.errors.DuplicateKeyError, e:
-            log.msg(spider.name + "Items already exist!",
+            log.msg("Items already exist!",
                     level=log.INFO, spider=spider)
         
         return item

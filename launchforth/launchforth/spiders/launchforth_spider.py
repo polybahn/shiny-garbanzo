@@ -1,6 +1,7 @@
 from scrapy import Spider
 from scrapy import Request
 from scrapy.conf import settings
+from scrapy import log
 from launchforth.items import LaunchforthItem
 from datetime import datetime
 import re
@@ -33,6 +34,8 @@ class launchforthSpider(Spider):
 
 
     def parse(self, response):
+        log.msg("crawled " + response.url,
+                    level=log.INFO, spider=self)
         d = extract_json(response)
         substitute_date(d)
         results = d['results']
@@ -44,5 +47,5 @@ class launchforthSpider(Spider):
         item['content'] = results
         yield item
         # extract next url to crawl
-        if 'next' in d and d['next'] != 'null':
+        if 'next' in d and d['next']:
             yield Request(url=d['next'], callback=self.parse)

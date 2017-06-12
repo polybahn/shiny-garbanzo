@@ -8,8 +8,9 @@ Object we concern: Project/Challenge/Idea, etc.
 
 The Goal of this project is to see how people move from Project to Project, and why people failed one Challenge but succeeded another.
 
+# 3rd June 2017
 
-# Some observation of the website:
+Added Some observation of the website:
 
 some useful api links:
 * [[Project]](https://launchforth.io/api/v2/project)
@@ -33,3 +34,7 @@ some useful api links:
 You can discover more :)
 
 * [[all APIs]](https://launchforth.io/api/v2/)
+
+# 9th June 2017
+
+Added crawler code in directory `launchforth`
