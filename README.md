@@ -2,9 +2,11 @@
 
 Project for crawling [[LaunchForth]](https://launchforth.io) and analyzing data.
 
-Object we concern: Project/Challenge/Idea, etc.
+Object we concern: 
 
-				   People get involved.
+1. Project/Challenge/Idea, etc.
+
+2.People get involved.
 
 The Goal of this project is to see how people move from Project to Project, and why people failed one Challenge but succeeded another.
 
